@@ -1,0 +1,225 @@
+<div class="m-subheader" appunwraptag="">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h2 class="m-subheader__title m-subheader__title--separator">
+				{{innerPageTitle}}
+			</h2>
+		</div>
+		<div>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<li class="m-nav__item m-nav__item--home">
+					<a href="#" class="m-nav__link m-nav__link--icon">
+						<i class="m-nav__link-icon la la-home"></i>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a href="" class="m-nav__link">
+						<span class="m-nav__link-text">
+							Clean Fleet Toolkit
+						</span>
+					</a>
+				</li>								
+			</ul>
+		</div>		
+	</div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+	<div class="m-portlet m-portlet--bordered m-portlet--bordered-semi">
+		<div class="m-portlet__body spacer-lg">
+			Below are questions to consider while developing your Clean Fleet Strategy. Use this in conjunction with the Calculator Tool.
+
+			<div class="spacer-lg"></div>
+			<div class="col-md-5">
+				<div class="m-demo">
+					<div class="m-demo__preview">
+						<h4 class="m-section__heading">What are your current emissions?</h4>
+						<div class="m-list-timeline">
+							<div class="m-list-timeline__items">
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.carbonMonoxide| number : '1.1-1')}} Carbon Monoxide
+									</span>
+									<span class="m-list-timeline__time">
+										CO (kg/yr)
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--danger"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.volatileOrganic| number : '1.1-1')}} Volatile Organic Compounds
+									</span>
+									<span class="m-list-timeline__time">
+										VOC (kg/yr)
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--warning"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.nitrousOxide| number : '1.1-1')}} Nitrous Oxides
+									</span>
+									<span class="m-list-timeline__time">
+										NO<sub>x</sub> (kg/yr)
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--primary"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.sulphurOxide| number : '1.1-1')}} Sulphur Oxides
+									</span>
+									<span class="m-list-timeline__time">
+										SO<sub>x</sub> (kg/yr)
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--brand"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.particulateMatter| number : '1.1-1')}} Particulate Matter
+									</span>
+									<span class="m-list-timeline__time">
+										PM<sub>10</sub> (kg/yr)
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.carbonDioxide| number : '1.1-1')}} Carbon Dioxide
+									</span>
+									<span class="m-list-timeline__time">
+										CO<sub>2</sub> (kg/yr)
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="m-demo">
+					<div class="m-demo__preview">
+						<h6 class="m-section__heading">What is your current fuel consumption?</h6>
+						<div class="m-list-timeline">
+							<div class="m-list-timeline__items">
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--success"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.totalGasolineFuel| number : '1.1-1')}} Ltr/yr
+									</span>
+									<span class="m-list-timeline__time">
+										Petrol
+									</span>
+								</div>
+								<div class="m-list-timeline__item">
+									<span class="m-list-timeline__badge m-list-timeline__badge--danger"></span>
+									<span class="m-list-timeline__text">
+										{{(totals.totalDieselFuel | number : '1.1-1')}} Ltr/yr
+									</span>
+									<span class="m-list-timeline__time">
+										Diesel
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="spacer-lg"></div>
+
+						<h6 class="m-section__heading">What is your fuel quality?</h6>
+						Sulphur level: {{(totals.fuelSulphurLevel | number)}} ppm
+						
+						<div class="m-form__group form-group row">
+							<label class="col-6 col-form-label">
+								Unleaded petrol?
+							</label>
+							<div class="col-3">
+								<span class="m-switch m-switch--outline m-switch--icon m-switch--info">
+									<label>
+										<input checked="checked" name="" type="checkbox">
+										<span></span>
+									</label>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clear"></div>
+		<div class="spacer-lg"></div>
+	</div>
+
+	<!--begin::Portlet-->	
+	<div class="m-portlet m-portlet--tabs">
+		<div class="m-portlet__head">
+			<div class="m-portlet__head-tools">
+				<ul class="nav nav-tabs m-tabs-line m-tabs-line--primary m-tabs-line--2x" role="tablist">
+					<li class="nav-item m-tabs__item">
+						<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_tabs_1_1" role="tab">
+							<i class="ivycon-globe"></i>
+							Short Term Targets
+						</a>
+					</li>
+					<li class="nav-item m-tabs__item">
+						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_2" role="tab">
+							<i class="ivycon-clock"></i>
+							Medium Term Targets
+						</a>
+					</li>
+					<li class="nav-item m-tabs__item">
+						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_3" role="tab">
+							<i class="ivycon-hour-glass"></i>
+							Long Term Targets
+						</a>
+					</li>
+					<li class="nav-item m-tabs__item">
+						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_tabs_1_4" role="tab">
+							<i class="la la-briefcase"></i>
+							Strategy Management
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="m-portlet__body">
+			<div class="tab-content">
+				<div class="tab-pane active" id="m_tabs_1_1" role="tabpanel">
+					<img class="float-left img-responsive padding-right-sm" alt="Health Impacts Global Perspective" src="../../../../assets/cleanFleet/img/HealthImpactsGlobalPerspective.jpg"/>
+					<p>The World Health Organisation estimated that in 2012 over 7,000,000 people died prematurely due to air pollution. However, many more people suffer from air pollution-related cancers, reduced child development, asthma attacks and bronchitis. While some pollutants cause acute health effects, others cause chronic illness after long periods of exposure. The most common health impacts related to air quality are respiratory diseases and cardiovascular (heart and circulatory system) diseases.</p>
+
+					<p>The effects of emissions from your fleet of motorcycles, cars, buses and trucks, as well as generators, are strongly dependent on where the emissions occur. Emissions in a city center have more health impacts than similar emissions in rural areas as more people are exposed in cities, and cities tend to trap air, not allowing it to mix and dilute pollution. As an example, emissions in Paris are estimated to have 10 times more health impacts than emissions occurring in the rural parts of France.</p>
+				</div>
+				<div class="tab-pane" id="m_tabs_1_2" role="tabpanel">
+					<img class="float-left img-responsive padding-right-sm" alt="Accute Health Impacts" src="../../../../assets/cleanFleet/img/HealthImpactsAccuteImpactsDhaka.jpg"/>
+
+					<p>Carbon monoxide (CO) is a well-known pollutant that can cause acute impacts. CO reduces the capacity of the blood to carry oxygen to the body’s tissues and organs. This impairs organ function which in extreme cases can result in death. CO concentrations can increase to dangerous levels in rooms with  badly maintained gas heaters or in garages with inadequate ventilation systems.</p>
+
+					<p>Ground-level ozone (or photochemical smog) can also have acute health impacts, especially for the elderly or people with impaired health. In 2017, heat waves and sunshine increased the frequency of days with unhealthy levels of ozone in Delhi. The share of days violating the 8-hour Central Pollution Control Board (CPCB) standard of 100 microgramme per cubic metre was 52 per cent in April and 77 per cent in May. Early deaths due to ozone jumped by 148 percent.</p>
+				</div>
+				<div class="tab-pane" id="m_tabs_1_3" role="tabpanel">
+					<img class="float-left img-responsive padding-right-sm" alt="Long Term Health Impacts" src="../../../../assets/cleanFleet/img/HealthImpactsLongTerm.jpg"/>
+
+					<p>Concentrations of particulate matter smaller than 10 microns (PM10) are commonly used as a proxy for all air pollutants when estimating long-term, chronic health impacts. Particulate matter causes the most serious health consequences, and includes many other pollutants (e.g. sulfates, hydrocarbons and nitrogen oxides).</p>
+
+					<p>Particulate matter affects human health by causing respiratory and cardiovascular problems which, in the worst cases, can lead to premature death. The extent of illness depends upon the size and chemical composition of the particulate matter. Particles emitted by diesel motor vehicles are the most problematic because they contain a large percentage of fine particles (PM2.5). In Europe alone, fine particles (PM2.5) are estimated to cause more than 467,000 deaths per year.</p>
+
+					<p>Other long-term health impacts that are not related to respiratory and cardiovascular function include an increased risk of cancer. For a more detailed description of the pollutants and their health effects, see Tool 3 for a list of pollutants.</p>
+				</div>
+				<div class="tab-pane" id="m_tabs_1_4" role="tabpanel">
+					<img class="float-left img-responsive padding-right-sm" alt="Influcening Factors" src="../../../../assets/cleanFleet/img/HealthImpactsInfluencingFactorsPyramid.jpg"/>
+
+					<p>Health impacts vary with the type of pollutant, the intensity and the duration of exposure, and the health status of the exposed person. Certain members of the population (such as the elderly, children, and those already suffering from respiratory and cardiovascular diseases) are at greater risk.</p>
+
+					<p>Health impacts also vary depending on the location of emissions. Vehicle emissions have greater impact in cities compared to rural areas; cities have more vehicles, higher population density (and therefore more people being exposed) and buildings that prevent the dissipation of emissions. Many cities in the developing world have higher numbers of older and poorly maintained vehicles, and poor fuel quality, compounding the issue further.</p>
+
+					<p>Climatic conditions—such as wind—affect the duration of time that pollutants remain airborne and therefore can be inhaled. Geographic conditions—such as altitude and proximity to mountains or oceans—affect the formation of  pollutants, such as ground-level ozone.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end::Portlet-->
+</div>

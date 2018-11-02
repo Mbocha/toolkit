@@ -1,0 +1,222 @@
+<!-- BEGIN: Header -->
+<header class="m-grid__item m-header header--not-fixed" data-minimize-offset="200" data-minimize-mobile-offset="200" appunwraptag="">
+    <div class="cleanFleetHeader hide-under-tab">
+        <div class="m-stack__item m-stack__item--middle col-md-3 left-logo no-padding">
+            <img alt="" src="./assets/cleanFleet/img/logos/FleetForumLogo.png" />
+        </div>
+
+        <div class="m-stack__item m-stack__item--middle col-md-6 mid-title no-padding">
+            <div class="siteTitle">
+                <h1>Clean Fleet Toolkit</h1>
+            </div>
+        </div>
+
+        <div class="m-stack__item m-stack__item--middle col-md-3 right-logo no-padding">
+            <img alt="" src="./assets/cleanFleet/img/logos/UnEnvLogo.png" />
+        </div>
+    </div>
+    <div class="m-container m-container--fluid m-container--full-height">
+        <div class="m-stack m-stack--ver m-stack--desktop">
+            <!-- BEGIN: Brand -->
+            <div class="m-stack__item m-brand  m-brand--skin-light">
+                <div class="m-stack m-stack--ver m-stack--general">
+                    <div class="m-stack__item m-stack__item--middle m-brand__logo">
+                        <a routerLink="/index" class="m-brand__logo-wrapper">
+                            <img alt="" src="./assets/cleanFleet/img/icons/calc_70.png" />
+                        </a>
+                        <h3 class="m-header__title">
+                            Clean Fleet Toolkit
+                        </h3>
+                    </div>
+                    <div class="m-stack__item m-stack__item--middle m-brand__tools">
+                        <!-- BEGIN: Responsive Aside Left Menu Toggler -->
+                        <a href="javascript:;" id="m_aside_left_offcanvas_toggle" class="m-brand__icon m-brand__toggler m-brand__toggler--left m--visible-tablet-and-mobile-inline-block">
+                            <span></span>
+                        </a>
+                        <!-- END -->
+                        <!-- BEGIN: Responsive Header Menu Toggler -->
+                        <a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+                            <span></span>
+                        </a>
+                        <!-- END -->
+                        <!-- BEGIN: Topbar Toggler -->
+                        <a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+                            <i class="flaticon-more"></i>
+                        </a>
+                        <!-- BEGIN: Topbar Toggler -->
+                    </div>
+                </div>
+            </div>
+            <!-- END: Brand -->
+            <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+                <div class="m-header__title">
+                    <h2 class="m-header__title-text">
+                        The Clean Fleet Toolkit
+                    </h2>
+                </div>
+                <!-- BEGIN: Topbar -->
+                <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+                    <div class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable m-header-search--skin-light" id="m_quicksearch"
+                        data-search-type="default">
+                        <!--BEGIN: Search Form ->
+						<form class="m-header-search__form">
+							<div class="m-header-search__wrapper">
+								<span class="m-header-search__icon-search" id="m_quicksearch_search">
+									<i class="flaticon-search"></i>
+								</span>
+								<span class="m-header-search__input-wrapper">
+									<input autocomplete="off" type="text" name="q" class="m-header-search__input" value="" placeholder="Search..." id="m_quicksearch_input">
+								</span>
+								<span class="m-header-search__icon-close" id="m_quicksearch_close">
+									<i class="la la-remove"></i>
+								</span>
+								<span class="m-header-search__icon-cancel" id="m_quicksearch_cancel">
+									<i class="la la-remove"></i>
+								</span>
+							</div>
+						</form>
+						<!-END: Search Form -->
+                        <!--BEGIN: Search Results -->
+                        <div class="m-dropdown__wrapper">
+                            <div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
+                            <div class="m-dropdown__inner">
+                                <div class="m-dropdown__body">
+                                    <div class="m-dropdown__scrollable m-scrollable" data-scrollable="true" data-max-height="300" data-mobile-max-height="200">
+                                        <div class="m-dropdown__content m-list-search m-list-search--skin-light"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BEGIN: END Results -->
+                    </div>
+                    <div class="m-stack__item m-topbar__nav-wrapper">
+                        <ul class="m-topbar__nav m-nav m-nav--inline">
+                            <li class="m-nav__item m-topbar__notifications m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width" data-dropdown-toggle="click" data-dropdown-persistent="true">
+                                <a href="javascript:void(0);" onclick="startIntro();" class="m-nav__link" id="m_topbar_notification_icon" data-toggle="m-tooltip" title="Show User Guide" data-placement="bottom">
+                                    <span class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger"></span>
+                                    <span class="m-nav__link-icon">
+										<span id="navHint" class="m-nav__link-icon-wrapper">
+											<i class="flaticon-info"></i>
+										</span>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li *ngIf="role==='user'" class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click" data-toggle="m-tooltip" title="Member Profile"
+                                data-placement="bottom">
+                                <a id="profileLink" href="#" class="m-nav__link m-dropdown__toggle">
+                                    <span class="m-topbar__userpic">
+										<img src="{{this.userpic}}" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+									</span>
+                                    <span class="m-nav__link-icon m-topbar__usericon m--hide">
+										<span class="m-nav__link-icon-wrapper">
+											<i class="flaticon-user-ok"></i>
+										</span>
+                                    </span>
+                                    <span class="m-topbar__username" style="padding-left: 7px;">
+										{{this.username}}
+									</span>
+                                </a>
+
+                                <div class="m-dropdown__wrapper">
+                                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                    <div class="m-dropdown__inner">
+                                        <div class="m-dropdown__header m--align-center">
+                                            <div class="m-card-user m-card-user--skin-light">
+                                                <div class="m-card-user__pic">
+
+                                                    <img src="{{this.userpic}}" class="m--img-rounded m--marginless" alt="" />
+                                                </div>
+                                                <div class="m-card-user__details">
+                                                    <span class="m-card-user__name m--font-weight-500">
+														{{this.username}}
+													</span>
+                                                    <a href="" class="m-card-user__email m--font-weight-300 m-link">
+														{{this.useremail}}
+													</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-dropdown__body">
+                                            <div class="m-dropdown__content">
+                                                <ul class="m-nav m-nav--skin-light">
+                                                    <li class="m-nav__section m--hide">
+                                                        <span class="m-nav__section-text">
+															Section
+														</span>
+                                                    </li>
+                                                    <li class="m-nav__item">
+                                                        <a routerLink="/profile" class="m-nav__link">
+                                                            <i class="m-nav__link-icon flaticon-profile-1"></i>
+                                                            <span class="m-nav__link-title">
+																<span class="m-nav__link-wrap">
+																	<span class="m-nav__link-text">
+																		My Profile
+																	</span>
+                                                            </span>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                    <li class="m-nav__item">
+                                                        <a routerLink="/snippets/pages/user/login-1" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder" (click)="smalLogout()" routerLink="/logout">
+															Logout
+														</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li *ngIf="role==='guest'" class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click" data-toggle="m-tooltip" data-placement="bottom">
+                                <a id="profileLink" href="#" class="m-nav__link m-dropdown__toggle">
+                                    <span class="m-topbar__userpic">
+                                            <img src="{{this.userpic}}" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+                                        </span>
+                                    <span class="m-nav__link-icon m-topbar__usericon m--hide">
+                                            <span class="m-nav__link-icon-wrapper">
+                                                <i class="flaticon-user-ok"></i>
+                                            </span>
+                                    </span>
+                                    <span class="m-topbar__username" style="padding-left: 7px;">
+                                            {{this.username}}
+                                        </span>
+                                </a>
+
+
+                                <div class="m-dropdown__wrapper">
+                                    <div class="m-dropdown__inner">
+                                        <div class="m-dropdown__body">
+                                            <!--<a routerLink="/profile" class="m-nav__link btn m-btn&#45;&#45;pill    btn-secondary m-btn m-btn&#45;&#45;custom m-btn&#45;&#45;label-brand m-btn&#45;&#45;bolder">-->
+                                                <!--Login-->
+                                            <!--</a>-->
+                                            <a (click)="onSamlLogin()" class="m-nav__link btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                Login
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="m_quick_sidebar_toggle" class="m-nav__item">
+                                <a id="glossaryLink" href="#" class="m-nav__link" data-toggle="m-tooltip" title="Glossary of Terms" data-placement="bottom">
+                                    <span class="m-nav__link-icon m-nav__link-icon-alt">
+										<span class="m-nav__link-icon-wrapper">
+											<i class="flaticon-grid-menu"></i>
+										</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END: Topbar -->
+            </div>
+        </div>
+    </div>
+</header>
+<!-- END: Header -->
